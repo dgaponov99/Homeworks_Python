@@ -33,6 +33,6 @@ class Parentheses:
             print("String is validity")
 
 
-s = "([]{(})"
+s = input("Введите строку: ")
 a = Parentheses(s)
 a.rightParentheses()

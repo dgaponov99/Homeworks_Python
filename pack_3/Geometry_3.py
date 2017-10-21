@@ -6,10 +6,10 @@ class Circle:
         self.radius = radius
 
     def area(self):
-        print("%.2f" % (0.5 * math.pi * (self.radius ** 2)))
+        print("Площадь: ", "%.2f" % (0.5 * math.pi * (self.radius ** 2)))
 
     def perimeter(self):
-        print("%.2f" % (2 * math.pi * self.radius))
+        print("Периметр: ", "%.2f" % (2 * math.pi * self.radius))
 
 
 class Rectangle:
@@ -18,12 +18,16 @@ class Rectangle:
         self.b = width
 
     def area(self):
-        print("%.2f" % (self.a*self.b))
+        print("Площадь: ", "%.2f" % (self.a * self.b))
 
 
-o = Circle(2)
+a = float(input("Введите радиус окружности: "))
+o = Circle(a)
 o.area()
 o.perimeter()
 
-r = Rectangle(3,4)
+print("Введите стороны прямоугольника:")
+a = float(input())
+b = float(input())
+r = Rectangle(a, b)
 r.area()
