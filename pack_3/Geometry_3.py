@@ -1,24 +1,32 @@
 import math
 
 
-class Circle:
-    def __init__(self, radius):
-        self.radius = radius
-
+class Figure:
     def area(self):
-        print("Площадь: ", "%.2f" % (0.5 * math.pi * (self.radius ** 2)))
+        pass
 
     def perimeter(self):
-        print("Периметр: ", "%.2f" % (2 * math.pi * self.radius))
+        pass
 
 
-class Rectangle:
-    def __init__(self, length, width):
-        self.a = length
-        self.b = width
+class Rectangle(Figure):
+    def __init__(self, a, b):
+        self.a = a
+        self.b = b
 
     def area(self):
         print("Площадь: ", "%.2f" % (self.a * self.b))
+
+
+class Circle(Figure):
+    def __init__(self, a):
+        self.a = a
+
+    def area(self):
+        print("Площадь: ", "%.2f" % (0.5 * math.pi * (self.a ** 2)))
+
+    def perimeter(self):
+        print("Периметр: ", "%.2f" % (2 * math.pi * self.a))
 
 
 a = float(input("Введите радиус окружности: "))
