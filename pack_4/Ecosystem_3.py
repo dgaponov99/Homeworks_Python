@@ -1,5 +1,7 @@
 import random
 
+import copy
+
 
 class Animal:
     pass
@@ -39,7 +41,7 @@ class Ecosystem:
     def __life(self):
         self.__filling()
         if self.steps > 0:
-            for i in range(self.steps):
+            for i in range(self.steps-1):
                 if self.fishNumber == self.lengthRiver or self.bearNumber == self.lengthRiver:
                     break
                 print()
@@ -47,8 +49,8 @@ class Ecosystem:
         else:
             s = ''
             while s != 'stop' and self.fishNumber != self.lengthRiver and self.bearNumber != self.lengthRiver:
-                self.__stepLife()
                 s = input()
+                self.__stepLife()
 
     def __filling(self):
         for i in range(self.bearNumber):
@@ -58,13 +60,15 @@ class Ecosystem:
         for i in range(self.fishNumber + self.bearNumber, self.lengthRiver):
             self.river.append(None)
         self.__shuffle()
+        self.__str__()
 
     def __shuffle(self):
         shuffleList = []
         while len(self.river) != 0:
             i = random.randint(0, len(self.river) - 1)
             shuffleList.append(self.river.pop(i))
-        self.river = shuffleList
+        self.river = []
+        self.river = copy.deepcopy(shuffleList)
 
     def __stepLife(self):
         nextStep = -1
@@ -154,7 +158,7 @@ class Ecosystem:
 
 
 print('Введите значения:')
-lengthRiver = int(input('Длинна реки: '))
+lengthRiver = int(input('Длина реки: '))
 deadBear = int(input('Число шагов медведя без еды: '))
 bear = int(input("Процент медведей в реке: "))
 fish = int(input('Процент рыбы в реке: '))
