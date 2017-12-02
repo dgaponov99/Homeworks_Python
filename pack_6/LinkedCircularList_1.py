@@ -70,3 +70,6 @@ class LinkedCircularList(Base.DoublyLinkedBase):
             print(self.get_element(node), end=' ')
             node = self.next(node)
         print()
+
+
+print('Работа класса продемонстрированна в файле ViewCircularList_1.ipynb')
